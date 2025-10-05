@@ -76,13 +76,15 @@ const questions = [
   },
   {
     id: 7,
-    type: 'association',
-    question: 'Associer l\'étape de l\'entretien au bon objectif :',
-    pairs: [
-      { left: 'Recueil des prises', right: 'Dépister risques/contre-indications' },
-      { left: 'Messages clés', right: 'Zéro automédication, vaccins, pictos' },
-      { left: 'Clôture', right: 'Remettre flyer ANSM, envoyer liens via Mon Espace Santé' }
+    type: 'qcm',
+    question: 'Associer l\'étape de l\'entretien au bon objectif - Sélectionnez les bonnes associations :',
+    options: [
+      '1) Recueil des prises → a) Dépister risques/contre-indications',
+      '2) Messages clés → b) Zéro automédication, vaccins, pictos',
+      '3) Clôture → c) Remettre flyer ANSM, envoyer liens via Mon Espace Santé',
+      '1) Messages clés → a) Dépister risques/contre-indications'
     ],
+    correctAnswers: [0, 1, 2],
     feedback: 'La trame type recueil → messages → clôture/ressources est requise, avec traçabilité DP/DMP.',
     niveau: 'Débutant'
   }

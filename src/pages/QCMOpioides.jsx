@@ -16,8 +16,8 @@ const questions = [
     type: 'qcm',
     question: 'Quels médicaments relèvent du palier II et sont concernés par l\'entretien ?',
     options: ['Tramadol', 'Codéine (et associations)', 'Poudre d\'opium', 'Dihydrocodéine', 'Morphine'],
-    correctAnswers: [0, 1, 2, 3],
-    feedback: 'La morphine est palier III ; le QCM cible palier II.',
+    correctAnswers: [0, 1, 3],
+    feedback: 'Tramadol, Codéine et Dihydrocodéine sont palier II. La morphine est palier III et la poudre d\'opium n\'est pas concernée par l\'entretien.',
     niveau: 'Débutant'
   },
   {
