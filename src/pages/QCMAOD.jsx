@@ -243,7 +243,7 @@ export default function QCMAsthme() {
             </svg>
             Retour
           </Link>
-          <h1 className="text-4xl font-bold text-white mb-2">🫁 Asthme</h1>
+          <h1 className="text-4xl font-bold text-white mb-2">💉 AOD</h1>
           <p className="text-white/80">Question {currentQuestion + 1} sur {questions.length}</p>
         </div>
 
@@ -253,7 +253,7 @@ export default function QCMAsthme() {
             <motion.div
               initial={{ width: 0 }}
               animate={{ width: `${progress}%` }}
-              className="h-full bg-gradient-to-r from-blue-500 to-cyan-500"
+              className="h-full bg-gradient-to-r from-emerald-500 to-teal-500"
             />
           </div>
         </div>
@@ -268,7 +268,7 @@ export default function QCMAsthme() {
             className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 mb-8"
           >
             <div className="flex items-start justify-between mb-6">
-              <span className="px-4 py-2 bg-blue-500/20 text-blue-200 rounded-full text-sm font-semibold">
+              <span className="px-4 py-2 bg-emerald-500/20 text-emerald-200 rounded-full text-sm font-semibold">
                 {question.niveau}
               </span>
               <span className="px-4 py-2 bg-white/20 text-white rounded-full text-sm font-semibold">
@@ -288,7 +288,7 @@ export default function QCMAsthme() {
                     disabled={showFeedback}
                     className={`flex-1 py-4 rounded-xl font-semibold transition-all ${
                       answers[currentQuestion] === option
-                        ? 'bg-gradient-to-r from-blue-500 to-cyan-500 text-white'
+                        ? 'bg-gradient-to-r from-emerald-500 to-teal-500 text-white'
                         : 'bg-white/10 text-white hover:bg-white/20'
                     }`}
                   >
@@ -308,7 +308,7 @@ export default function QCMAsthme() {
                     disabled={showFeedback}
                     className={`w-full p-4 text-left rounded-xl transition-all ${
                       answers[currentQuestion] === index
-                        ? 'bg-gradient-to-r from-blue-500 to-cyan-500 text-white'
+                        ? 'bg-gradient-to-r from-emerald-500 to-teal-500 text-white'
                         : 'bg-white/10 text-white hover:bg-white/20'
                     }`}
                   >
@@ -334,7 +334,7 @@ export default function QCMAsthme() {
                     disabled={showFeedback}
                     className={`w-full p-4 text-left rounded-xl transition-all ${
                       (answers[currentQuestion] || []).includes(index)
-                        ? 'bg-gradient-to-r from-blue-500 to-cyan-500 text-white'
+                        ? 'bg-gradient-to-r from-emerald-500 to-teal-500 text-white'
                         : 'bg-white/10 text-white hover:bg-white/20'
                     }`}
                   >
