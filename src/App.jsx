@@ -3,7 +3,9 @@ import Home from './pages/Home'
 import QCMFemmeEnceinte from './pages/QCMFemmeEnceinte'
 import QCMOpioides from './pages/QCMOpioides'
 import QCMAsthme from './pages/QCMAsthme'
-import ComingSoon from './pages/ComingSoon'
+import QCMAVK from './pages/QCMAVK'
+import QCMAOD from './pages/QCMAOD'
+import QCMComplet from './pages/QCMComplet'
 
 function App() {
   return (
@@ -14,9 +16,9 @@ function App() {
           <Route path="/femme-enceinte" element={<QCMFemmeEnceinte />} />
           <Route path="/opioides" element={<QCMOpioides />} />
           <Route path="/asthme" element={<QCMAsthme />} />
-          <Route path="/avk" element={<ComingSoon title="🩸 AVK" />} />
-          <Route path="/aod" element={<ComingSoon title="💉 AOD" />} />
-          <Route path="/complet" element={<ComingSoon title="⭐ QCM Complet" />} />
+          <Route path="/avk" element={<QCMAVK />} />
+          <Route path="/aod" element={<QCMAOD />} />
+          <Route path="/complet" element={<QCMComplet />} />
         </Routes>
       </div>
     </Router>
