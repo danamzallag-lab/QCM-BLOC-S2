@@ -18,7 +18,7 @@ const questions = [
     type: 'qcm',
     question: 'Conseils prioritaires à rappeler (plusieurs réponses) :',
     options: [
-      'Pas d'automédication sans avis pharmaceutique',
+      'Pas d\'automédication sans avis pharmaceutique',
       'Signalement immédiat de tout saignement ou douleur abdominale inhabituelle',
       'Association systématique huiles essentielles',
       'Carnet de suivi et calendrier vaccinal à jour'
