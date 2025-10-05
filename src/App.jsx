@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Home from './pages/Home'
 import QCMFemmeEnceinte from './pages/QCMFemmeEnceinte'
 import QCMOpioides from './pages/QCMOpioides'
+import QCMAsthme from './pages/QCMAsthme'
 import ComingSoon from './pages/ComingSoon'
 
 function App() {
@@ -12,7 +13,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/femme-enceinte" element={<QCMFemmeEnceinte />} />
           <Route path="/opioides" element={<QCMOpioides />} />
-          <Route path="/asthme" element={<ComingSoon title="🫁 Asthme" />} />
+          <Route path="/asthme" element={<QCMAsthme />} />
           <Route path="/avk" element={<ComingSoon title="🩸 AVK" />} />
           <Route path="/aod" element={<ComingSoon title="💉 AOD" />} />
           <Route path="/complet" element={<ComingSoon title="⭐ QCM Complet" />} />
