@@ -6,146 +6,146 @@ const questions = [
   {
     id: 1,
     type: 'qcu',
-    question: "Quel est le critère d'éligibilité prioritaire pour engager l'accompagnement asthme en officine ?",
+    question: "Quel patient est éligible/prioritaire pour l'accompagnement AOD en officine ?",
     options: [
-      "Prescription d'un SABA seul (au besoin)",
-      "Patient majeur avec au moins une hospitalisation pour crise",
-      "Prescription de corticoïdes inhalés prévue sur 6 mois ou plus",
-      "Âge supérieur à 12 ans"
+      'Patient sous warfarine au long cours',
+      'Patient sous apixaban/rivaroxaban/dabigatran/édoxaban',
+      'Patient sous héparine de bas poids moléculaire ponctuelle',
+      'Patient sevré de tout anticoagulant depuis 1 an'
     ],
-    correctAnswer: 2,
-    feedback: "L'éligibilité cible un patient sous traitement de fond par corticoïdes inhalés (CSI) avec une durée prévue ≥ 6 mois. Le repérage peut se faire à la primo-délivrance de CSI, aux renouvellements, ou après une décompensation.",
+    correctAnswer: 1,
+    feedback: "L'accompagnement AOD concerne les patients traités par apixaban, rivaroxaban, dabigatran ou édoxaban, à l'initiation ou au long cours.",
     niveau: 'Éligibilité'
   },
   {
     id: 2,
-    type: 'qcu',
-    question: "Comment se structure le parcours d'accompagnement la 1re année ?",
+    type: 'qcm',
+    question: 'Quelles affirmations sont correctes concernant la prise des AOD ? (plusieurs réponses)',
     options: [
-      "Deux entretiens: évaluation et bilan final",
-      "Trois entretiens: évaluation, module thématique, 2e module + bilan",
-      "Quatre entretiens: deux évaluations, un module, un bilan",
-      "Un seul entretien annuel de synthèse"
+      'Ne jamais doubler une dose pour rattraper un oubli',
+      'Rivaroxaban 15/20 mg : à prendre avec un repas',
+      'Tous les AOD se prennent strictement à jeun',
+      'Adapter les horaires au quotidien pour favoriser l'observance'
     ],
-    correctAnswer: 1,
-    feedback: "Année 1: 3 entretiens — 1) Évaluation, 2) Module thématique adapté, 3) Second module + bilan et plan d'action.",
-    niveau: 'Parcours'
+    correctAnswers: [0, 1, 3],
+    feedback: "Rivaroxaban 15/20 mg nécessite un repas pour une bonne biodisponibilité. On n'augmente jamais la dose pour rattraper. Les horaires peuvent s'ancrer à des routines.",
+    niveau: 'Posologie'
   },
   {
     id: 3,
-    type: 'qcu',
-    question: "Pour un aérosol doseur (MDI), quel geste est correct ?",
+    type: 'qcm',
+    question: 'Conduites en cas d'oubli (généralités) — cochez les réponses correctes',
     options: [
-      "Déclencher la bouffée après une inspiration profonde",
-      "Déclencher au début d'une inspiration lente et profonde",
-      "Inspirer très vite comme pour un DPI",
-      "Souffler dans l'embout juste avant de déclencher"
+      'Prise 1/j : prendre la dose oubliée si l'on s'en rend compte le même jour',
+      'Prise 1/j : doubler la dose le lendemain',
+      'Prise 2/j : prendre dès que possible si l'intervalle est court',
+      'Prise 2/j : si l'heure suivante est proche, attendre la prochaine prise'
     ],
-    correctAnswer: 1,
-    feedback: "MDI: expirer doucement, placer l'embout, puis déclencher au début d'une inspiration lente et profonde; garder la respiration quelques secondes ensuite.",
-    niveau: 'Technique d\'inhalation'
+    correctAnswers: [0, 2, 3],
+    feedback: "Règle générale : ne pas doubler. 1/j : rattraper dans la même journée sinon sauter. 2/j : prendre dès que possible si intervalle raisonnable, sinon attendre la prochaine.",
+    niveau: 'Oublis'
   },
   {
     id: 4,
-    type: 'qcu',
-    question: "Pour un dispositif à poudre (DPI), quelle instruction est la plus juste ?",
+    type: 'qcm',
+    question: 'Sélectionnez les situations nécessitant une vigilance accrue (interactions)',
     options: [
-      "Inspirer lentement et déclencher en fin d'inspiration",
-      "Ne pas expirer avant l'inspiration pour garder l'humidité",
-      "Charger la dose, expirer loin de l'embout, inspirer fort et rapidement",
-      "Rincer la bouche avant l'inspiration pour limiter la toux"
+      'Introduction d'un inhibiteur/inducteur puissant de P-gp/CYP3A4',
+      'Millepertuis',
+      'Automédication par AINS/aspirine sans avis',
+      'Paracétamol aux doses usuelles'
     ],
-    correctAnswer: 2,
-    feedback: "DPI: charger la dose selon le dispositif, expirer à distance de l'embout, puis inspirer FORT et rapidement; retenir son souffle quelques secondes.",
-    niveau: 'Technique d\'inhalation'
+    correctAnswers: [0, 1, 2],
+    feedback: "Inhibiteurs/inducteurs P-gp/CYP3A4, millepertuis et AINS/aspirine augmentent le risque. Le paracétamol aux doses usuelles reste l'antalgique de référence.",
+    niveau: 'Interactions'
   },
   {
     id: 5,
     type: 'qcu',
-    question: "Pourquoi recommander un rinçage de bouche après chaque prise de CSI ?",
+    question: 'Quel couple antidote–médicament est correctement associé ?',
     options: [
-      "Pour améliorer l'absorption systémique du CSI",
-      "Pour diminuer la dysphonie et la candidose oropharyngée",
-      "Pour accélérer l'effet bronchodilatateur",
-      "Pour réduire l'effet anticholinergique"
+      'Idarucizumab — anti-Xa',
+      'Andexanet alfa — dabigatran',
+      'Idarucizumab — dabigatran',
+      'Vitamine K — apixaban'
     ],
-    correctAnswer: 1,
-    feedback: "Le rinçage de bouche réduit les effets indésirables locaux des corticoïdes inhalés: dysphonie et candidose.",
-    niveau: 'Effets indésirables'
+    correctAnswer: 2,
+    feedback: "Idarucizumab est l'antidote spécifique du dabigatran. Andexanet alfa cible les anti-Xa (apixaban, rivaroxaban, ± édoxaban selon indications locales).",
+    niveau: 'Saignement/Antidotes'
   },
   {
     id: 6,
     type: 'qcu',
-    question: "Quel conseil est le plus pertinent pour renforcer l'observance du traitement de fond ?",
+    question: 'Conduite prioritaire face à un saignement majeur sous AOD :',
     options: [
-      "Diminuer progressivement le CSI dès amélioration",
-      "Utiliser seulement le CSI en cas de symptômes",
-      "Associer la prise à une routine quotidienne et programmer des rappels",
-      "Passer d'un CSI quotidien à un SABA régulier"
+      'Poursuivre l'AOD et surveiller',
+      'Arrêt temporaire et orientation en urgence (antidote possible selon molécule)',
+      'Doubler la dose suivante pour compenser',
+      'Boire de l'eau sucrée'
     ],
-    correctAnswer: 2,
-    feedback: "Ancrer une routine (ex: après le brossage) et utiliser des rappels/alertes sont des leviers d'observance; le CSI se prend tous les jours, même sans symptômes.",
-    niveau: 'Observance'
+    correctAnswer: 1,
+    feedback: "Devant un saignement majeur : arrêt temporaire, orientation en urgence, bilan et éventuel usage d'un antidote spécifique selon la molécule.",
+    niveau: 'Saignement (conduite)'
   },
   {
     id: 7,
     type: 'qcu',
-    question: "Quel conseil environnemental est approprié chez un patient sensibilisé aux acariens ?",
+    question: 'Avant une chirurgie à risque hémorragique, le principe général est :',
     options: [
-      "Aérer très peu pour conserver une atmosphère stable",
-      "Utiliser des housses anti-acariens et aérer régulièrement",
-      "Éviter tout contact extérieur pendant la saison pollinique",
-      "Dormir avec l'animal domestique pour s'habituer"
+      'Arrêt 24–48 h avant selon risque et fonction rénale (décision médicale)',
+      'Arrêt la veille uniquement, quelle que soit la situation',
+      'Poursuite systématique des AOD',
+      'Relais HBPM automatique pour tous'
     ],
-    correctAnswer: 1,
-    feedback: "Mesures utiles: housses anti-acariens, aération régulière, réduire les nids à poussière; éviter la fumée de tabac.",
-    niveau: 'Déclencheurs'
+    correctAnswer: 0,
+    feedback: "L'arrêt est anticipé selon le geste et la clairance rénale ; le relais HBPM n'est pas systématique et relève de la décision médicale.",
+    niveau: 'Actes invasifs'
   },
   {
     id: 8,
     type: 'qcu',
-    question: "En cas de signes de décompensation sévère (dyspnée marquée, difficulté à parler), quelle conduite recommander ?",
+    question: 'Quel conseil au quotidien est approprié ?',
     options: [
-      "Prendre deux bouffées de CSI et attendre",
-      "Boire de l'eau et se reposer",
-      "Administrer 2 bouffées de salbutamol si disponible et appeler le 15 en cas de détresse",
-      "Doubler le traitement de fond pendant 48 heures"
+      'Sports de contact encouragés',
+      'Carte anticoagulant sur soi et informer tout soignant',
+      'Automédication sans avis',
+      'Doubler la dose lors d'oubli'
     ],
-    correctAnswer: 2,
-    feedback: "Devant des signes sévères: recourir au bronchodilatateur de secours si disponible et contacter les secours (15) en cas de détresse respiratoire.",
-    niveau: 'Urgence'
+    correctAnswer: 1,
+    feedback: "Informer les soignants et porter la carte anticoagulant ; éviter sports de contact ; pas d'automédication risquée ; jamais de double dose.",
+    niveau: 'Vie quotidienne'
   },
   {
     id: 9,
     type: 'qcu',
-    question: "Quelle pratique de coordination/traçabilité est attendue après l'entretien ?",
+    question: 'Bonne pratique officinale après l'entretien AOD :',
     options: [
-      "Aucune trace si le patient va mieux",
-      "Tracer dans DP/DMP et envoyer un message MSS au médecin traitant si besoin",
-      "Envoyer systématiquement l'ordonnance originale à la CPAM",
-      "Appeler la pharmacie de garde pour information"
+      'Aucune trace si tout va bien',
+      'Traçabilité DP/DMP, fiches archivées ; MSS au MT si besoin',
+      'Envoyer l'ordonnance originale à la CPAM',
+      'Téléphoner chaque soir au patient'
     ],
     correctAnswer: 1,
-    feedback: "Tracer dans le DP/DMP, conserver les fiches d'entretien et informer le médecin via MSS si nécessaire font partie des bonnes pratiques.",
-    niveau: 'Coordination'
+    feedback: "Tracer dans DP/DMP, conserver les fiches, informer le médecin (MSS) en cas de besoin font partie du standard de qualité.",
+    niveau: 'Coordination/Traçabilité'
   },
   {
     id: 10,
     type: 'qcu',
-    question: "Quelle affirmation est correcte concernant la facturation ?",
+    question: 'Quelle affirmation est correcte concernant la facturation ?',
     options: [
-      "Année 1: trois entretiens ASI à 15 €, 15 € et 20 €",
-      "TAC correspond à un forfait de 10 € au démarrage",
-      "Années suivantes: 3 entretiens annuels ASS",
-      "Les entretiens sont toujours cumulables avec toute autre prestation le même jour"
+      'Année 1 : ASI 15 € + 15 € + 20 € ; Années suivantes : ASS 10 € + 20 €',
+      'TAC = 10 € au démarrage',
+      'Actes cumulables avec toute autre prestation le même jour',
+      'Nombre d'entretiens annuel libre'
     ],
     correctAnswer: 0,
-    feedback: "Année 1: 3 entretiens (ASI 15 € + 15 € + 20 €). Les années suivantes: ASS 10 € + 20 €. TAC est un traceur d'adhésion (0,01 €). L'acte n'est pas cumulable sur le même flux le jour même.",
+    feedback: "TAC = traceur (0,01 €). Année 1 : 3 entretiens ASI (15/15/20). Années suivantes : ASS (10/20). Acte isolé non cumulable le même jour sur le même flux.",
     niveau: 'Facturation'
   }
 ]
 
-export default function QCMAsthme() {
+export default function QCMAOD() {
   const [currentQuestion, setCurrentQuestion] = useState(0)
   const [answers, setAnswers] = useState({})
   const [showFeedback, setShowFeedback] = useState(false)
@@ -222,7 +222,7 @@ export default function QCMAsthme() {
             </button>
             <Link
               to="/"
-              className="px-8 py-4 bg-gradient-to-r from-blue-500 to-cyan-500 text-white rounded-xl font-semibold hover:shadow-2xl transition-all"
+              className="px-8 py-4 bg-gradient-to-r from-emerald-500 to-teal-500 text-white rounded-xl font-semibold hover:shadow-2xl transition-all"
             >
               Retour à l'accueil
             </Link>
@@ -372,7 +372,7 @@ export default function QCMAsthme() {
           <button
             onClick={nextQuestion}
             disabled={!showFeedback}
-            className="px-6 py-3 bg-gradient-to-r from-blue-500 to-cyan-500 text-white rounded-xl font-semibold hover:shadow-2xl transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+            className="px-6 py-3 bg-gradient-to-r from-emerald-500 to-teal-500 text-white rounded-xl font-semibold hover:shadow-2xl transition-all disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {currentQuestion === questions.length - 1 ? 'Terminer' : 'Suivant'}
           </button>

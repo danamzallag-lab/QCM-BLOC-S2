@@ -3,149 +3,198 @@ import { Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const questions = [
+  // Femme enceinte (3)
   {
     id: 1,
     type: 'qcu',
-    question: "Quel est le critère d'éligibilité prioritaire pour engager l'accompagnement asthme en officine ?",
-    options: [
-      "Prescription d'un SABA seul (au besoin)",
-      "Patient majeur avec au moins une hospitalisation pour crise",
-      "Prescription de corticoïdes inhalés prévue sur 6 mois ou plus",
-      "Âge supérieur à 12 ans"
-    ],
-    correctAnswer: 2,
-    feedback: "L'éligibilité cible un patient sous traitement de fond par corticoïdes inhalés (CSI) avec une durée prévue ≥ 6 mois. Le repérage peut se faire à la primo-délivrance de CSI, aux renouvellements, ou après une décompensation.",
-    niveau: 'Éligibilité'
+    question: "Antalgique de 1er choix pendant la grossesse (si nécessaire et aux doses usuelles) :",
+    options: ['Ibuprofène', 'Paracétamol', 'Kétoprofène', 'Aspirine systématique'],
+    correctAnswer: 1,
+    feedback: "Le paracétamol est l'antalgique/antipyrétique de référence si nécessaire. Les AINS sont contre-indiqués au 3e trimestre et à éviter sans avis médical.",
+    niveau: 'Femme enceinte'
   },
   {
     id: 2,
-    type: 'qcu',
-    question: "Comment se structure le parcours d'accompagnement la 1re année ?",
+    type: 'qcm',
+    question: 'Conseils prioritaires à rappeler (plusieurs réponses) :',
     options: [
-      "Deux entretiens: évaluation et bilan final",
-      "Trois entretiens: évaluation, module thématique, 2e module + bilan",
-      "Quatre entretiens: deux évaluations, un module, un bilan",
-      "Un seul entretien annuel de synthèse"
+      'Pas d'automédication sans avis pharmaceutique',
+      'Signalement immédiat de tout saignement ou douleur abdominale inhabituelle',
+      'Association systématique huiles essentielles',
+      'Carnet de suivi et calendrier vaccinal à jour'
     ],
-    correctAnswer: 1,
-    feedback: "Année 1: 3 entretiens — 1) Évaluation, 2) Module thématique adapté, 3) Second module + bilan et plan d'action.",
-    niveau: 'Parcours'
+    correctAnswers: [0, 1, 3],
+    feedback: "Autonomie mais sans automédication risquée ; repérer signes d'alerte ; sécuriser le parcours (suivi, vaccinations selon recommandations).",
+    niveau: 'Femme enceinte'
   },
   {
     id: 3,
     type: 'qcu',
-    question: "Pour un aérosol doseur (MDI), quel geste est correct ?",
+    question: 'Concernant les AINS pendant la grossesse :',
     options: [
-      "Déclencher la bouffée après une inspiration profonde",
-      "Déclencher au début d'une inspiration lente et profonde",
-      "Inspirer très vite comme pour un DPI",
-      "Souffler dans l'embout juste avant de déclencher"
+      'Autorisation large au 2e et 3e trimestres',
+      'Contre-indiqués au 3e trimestre (risques fœto-maternels)',
+      'Toujours préférés au paracétamol',
+      'Sans impact sur le canal artériel'
     ],
     correctAnswer: 1,
-    feedback: "MDI: expirer doucement, placer l'embout, puis déclencher au début d'une inspiration lente et profonde; garder la respiration quelques secondes ensuite.",
-    niveau: 'Technique d\'inhalation'
+    feedback: "Les AINS sont contre-indiqués au 3e trimestre (risque de fermeture du canal artériel, insuffisance rénale fœtale, hémorragies).",
+    niveau: 'Femme enceinte'
   },
+
+  // Opioïdes (3)
   {
     id: 4,
-    type: 'qcu',
-    question: "Pour un dispositif à poudre (DPI), quelle instruction est la plus juste ?",
+    type: 'qcm',
+    question: 'Bonnes pratiques à l'initiation d'un opioïde (plusieurs réponses) :',
     options: [
-      "Inspirer lentement et déclencher en fin d'inspiration",
-      "Ne pas expirer avant l'inspiration pour garder l'humidité",
-      "Charger la dose, expirer loin de l'embout, inspirer fort et rapidement",
-      "Rincer la bouche avant l'inspiration pour limiter la toux"
+      'Informer sur somnolence et conduite automobile',
+      'Prévenir la constipation (laxatif conseillé)',
+      'Conseiller de doubler la dose en cas de douleur persistante d'emblée',
+      'Évaluer interactions et co-médications sédatives'
     ],
-    correctAnswer: 2,
-    feedback: "DPI: charger la dose selon le dispositif, expirer à distance de l'embout, puis inspirer FORT et rapidement; retenir son souffle quelques secondes.",
-    niveau: 'Technique d\'inhalation'
+    correctAnswers: [0, 1, 3],
+    feedback: "Information sécurité (somnolence), prévention systématique de la constipation, revue médicamenteuse et interactions ; pas d'escalade anarchique.",
+    niveau: 'Opioïdes antalgiques'
   },
   {
     id: 5,
     type: 'qcu',
-    question: "Pourquoi recommander un rinçage de bouche après chaque prise de CSI ?",
-    options: [
-      "Pour améliorer l'absorption systémique du CSI",
-      "Pour diminuer la dysphonie et la candidose oropharyngée",
-      "Pour accélérer l'effet bronchodilatateur",
-      "Pour réduire l'effet anticholinergique"
-    ],
-    correctAnswer: 1,
-    feedback: "Le rinçage de bouche réduit les effets indésirables locaux des corticoïdes inhalés: dysphonie et candidose.",
-    niveau: 'Effets indésirables'
+    question: 'Signe d'alerte d'un surdosage opioïde nécessitant une prise en charge urgente :',
+    options: ['Myosis + bradypnée + somnolence profonde', 'Toux sèche isolée', 'Rhinorrhée', 'Prurit cutané léger'],
+    correctAnswer: 0,
+    feedback: "La triade myosis, dépression respiratoire, somnolence profonde évoque un surdosage. Appel urgence et conduite adaptée.",
+    niveau: 'Opioïdes antalgiques'
   },
   {
     id: 6,
     type: 'qcu',
-    question: "Quel conseil est le plus pertinent pour renforcer l'observance du traitement de fond ?",
+    question: 'À propos du tramadol :',
     options: [
-      "Diminuer progressivement le CSI dès amélioration",
-      "Utiliser seulement le CSI en cas de symptômes",
-      "Associer la prise à une routine quotidienne et programmer des rappels",
-      "Passer d'un CSI quotidien à un SABA régulier"
-    ],
-    correctAnswer: 2,
-    feedback: "Ancrer une routine (ex: après le brossage) et utiliser des rappels/alertes sont des leviers d'observance; le CSI se prend tous les jours, même sans symptômes.",
-    niveau: 'Observance'
-  },
-  {
-    id: 7,
-    type: 'qcu',
-    question: "Quel conseil environnemental est approprié chez un patient sensibilisé aux acariens ?",
-    options: [
-      "Aérer très peu pour conserver une atmosphère stable",
-      "Utiliser des housses anti-acariens et aérer régulièrement",
-      "Éviter tout contact extérieur pendant la saison pollinique",
-      "Dormir avec l'animal domestique pour s'habituer"
+      'C'est sans risque d'interactions',
+      'Peut majorer le risque de syndrome sérotoninergique avec certains antidépresseurs',
+      'Toujours associé à un AINS',
+      'N'entraîne jamais de somnolence'
     ],
     correctAnswer: 1,
-    feedback: "Mesures utiles: housses anti-acariens, aération régulière, réduire les nids à poussière; éviter la fumée de tabac.",
-    niveau: 'Déclencheurs'
+    feedback: "Le tramadol a un risque sérotoninergique (ISRS/IMAO/IRSNa…) et peut entraîner somnolence ; l'association systématique aux AINS n'est pas une règle.",
+    niveau: 'Opioïdes antalgiques'
+  },
+
+  // Asthme (3)
+  {
+    id: 7,
+    type: 'qcm',
+    question: 'Points clés du suivi officinal (plusieurs réponses) :',
+    options: [
+      'Vérification régulière de la technique d'inhalation',
+      'Repérage d'un sur-usage de SABA (≥3 boîtes/an)',
+      'Arrêt arbitraire des CSI dès amélioration',
+      'Plan d'action écrit et adhésion'
+    ],
+    correctAnswers: [0, 1, 3],
+    feedback: "Technique d'inhalation = déterminante ; sur-usage de SABA est un signal de risque ; le traitement de fond ne s'arrête pas sans avis.",
+    niveau: 'Asthme'
   },
   {
     id: 8,
     type: 'qcu',
-    question: "En cas de signes de décompensation sévère (dyspnée marquée, difficulté à parler), quelle conduite recommander ?",
+    question: 'Message correct au comptoir :',
     options: [
-      "Prendre deux bouffées de CSI et attendre",
-      "Boire de l'eau et se reposer",
-      "Administrer 2 bouffées de salbutamol si disponible et appeler le 15 en cas de détresse",
-      "Doubler le traitement de fond pendant 48 heures"
+      '"Le traitement de fond (CSI ± LABA) se prend tous les jours, même sans symptômes."',
+      '"Le SABA est à prendre systématiquement avant chaque sortie."',
+      '"Les inhalateurs n'influencent pas l'adhésion."',
+      '"Un seul passage à l'officine suffit pour apprendre la technique."'
     ],
-    correctAnswer: 2,
-    feedback: "Devant des signes sévères: recourir au bronchodilatateur de secours si disponible et contacter les secours (15) en cas de détresse respiratoire.",
-    niveau: 'Urgence'
+    correctAnswer: 0,
+    feedback: "Le contrôle repose sur l'observance du fond ; le SABA est de secours ; l'éducation inhalatoire est répétée et personnalisée.",
+    niveau: 'Asthme'
   },
   {
     id: 9,
     type: 'qcu',
-    question: "Quelle pratique de coordination/traçabilité est attendue après l'entretien ?",
-    options: [
-      "Aucune trace si le patient va mieux",
-      "Tracer dans DP/DMP et envoyer un message MSS au médecin traitant si besoin",
-      "Envoyer systématiquement l'ordonnance originale à la CPAM",
-      "Appeler la pharmacie de garde pour information"
-    ],
-    correctAnswer: 1,
-    feedback: "Tracer dans le DP/DMP, conserver les fiches d'entretien et informer le médecin via MSS si nécessaire font partie des bonnes pratiques.",
-    niveau: 'Coordination'
+    question: 'Priorité en cas d'exacerbation suspectée :',
+    options: ['Reporter toute prise en charge', 'Conseiller d'augmenter le SABA sans évaluation', 'Orienter selon plan d'action et signes de gravité', 'Arrêter le CSI'],
+    correctAnswer: 2,
+    feedback: "On s'appuie sur le plan d'action et la recherche de signes de gravité ; pas d'arrêt sauvage du traitement de fond.",
+    niveau: 'Asthme'
   },
+
+  // AVK (3)
   {
     id: 10,
     type: 'qcu',
-    question: "Quelle affirmation est correcte concernant la facturation ?",
+    question: 'Message central sur l'alimentation et la vitamine K :',
+    options: ['Éviter définitivement les légumes verts', 'Stabiliser les apports sans faire de variations brutales', 'Faire des cures "détox" très vertes', 'Supprimer toute huile végétale'],
+    correctAnswer: 1,
+    feedback: "On recherche la stabilité des apports en vitamine K ; pas d'interdiction absolue mais éviter les variations rapides.",
+    niveau: 'AVK'
+  },
+  {
+    id: 11,
+    type: 'qcm',
+    question: 'Précautions / interactions à rappeler (plusieurs réponses) :',
     options: [
-      "Année 1: trois entretiens ASI à 15 €, 15 € et 20 €",
-      "TAC correspond à un forfait de 10 € au démarrage",
-      "Années suivantes: 3 entretiens annuels ASS",
-      "Les entretiens sont toujours cumulables avec toute autre prestation le même jour"
+      'AINS/aspirine sans avis : à éviter',
+      'Millepertuis : contre-indiqué',
+      'Adaptation de dose par le patient selon son ressenti',
+      'Carnet AVK à jour et carte anticoagulant sur soi'
+    ],
+    correctAnswers: [0, 1, 3],
+    feedback: "AINS/aspirine augmentent le risque hémorragique ; le millepertuis est contre-indiqué ; traçabilité indispensable ; jamais d'auto-adaptation.",
+    niveau: 'AVK'
+  },
+  {
+    id: 12,
+    type: 'qcu',
+    question: 'Conduite correcte si INR très élevé + signes hémorragiques :',
+    options: ['Poursuivre et recontrôler plus tard', 'Suspendre l'AVK et orienter immédiatement pour avis médical', 'Doubler la dose suivante', 'Ignorer si pas de douleur'],
+    correctAnswer: 1,
+    feedback: "Signe d'alarme : arrêt temporaire et orientation immédiate ; adaptation selon protocole médical (vitamine K possible).",
+    niveau: 'AVK'
+  },
+
+  // AOD (3)
+  {
+    id: 13,
+    type: 'qcm',
+    question: 'Choisissez les affirmations correctes concernant la prise :',
+    options: [
+      'Rivaroxaban 15/20 mg à prendre avec repas',
+      'Ne jamais doubler une dose oubliée',
+      'Tous les AOD nécessitent un INR mensuel',
+      'Associer la prise à une routine + rappels'
+    ],
+    correctAnswers: [0, 1, 3],
+    feedback: "Rivaroxaban 15/20 mg : avec repas ; pas de rattrapage en doublant ; pas de surveillance d'INR systématique ; ancrer la prise dans le quotidien.",
+    niveau: 'AOD'
+  },
+  {
+    id: 14,
+    type: 'qcu',
+    question: 'Couple antidote — molécule correctement associé :',
+    options: ['Idarucizumab — dabigatran', 'Andexanet alfa — dabigatran', 'Vitamine K — apixaban', 'Aucun antidote n'existe'],
+    correctAnswer: 0,
+    feedback: "Idarucizumab pour le dabigatran ; andexanet alfa pour les anti-Xa (apixaban, rivaroxaban, ± édoxaban selon indications locales).",
+    niveau: 'AOD'
+  },
+  {
+    id: 15,
+    type: 'qcu',
+    question: 'Avant une chirurgie à risque hémorragique :',
+    options: [
+      'Arrêt généralement 24–48 h selon risque et fonction rénale (décision médicale)',
+      'Poursuite systématique',
+      'Relais HBPM automatique pour tous',
+      'Doubler la dose la veille'
     ],
     correctAnswer: 0,
-    feedback: "Année 1: 3 entretiens (ASI 15 € + 15 € + 20 €). Les années suivantes: ASS 10 € + 20 €. TAC est un traceur d'adhésion (0,01 €). L'acte n'est pas cumulable sur le même flux le jour même.",
-    niveau: 'Facturation'
+    feedback: "La fenêtre d'arrêt dépend du geste et de la clairance rénale ; le relais n'est pas systématique et relève du prescripteur.",
+    niveau: 'AOD'
   }
 ]
 
-export default function QCMAsthme() {
+export default function QCMComplet() {
   const [currentQuestion, setCurrentQuestion] = useState(0)
   const [answers, setAnswers] = useState({})
   const [showFeedback, setShowFeedback] = useState(false)
